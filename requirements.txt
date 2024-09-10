@@ -1,0 +1,9 @@
+# Requests
+requests==2.32.3
+
+
+# NMAP Library 
+python-nmap==0.7.1
+
+
+
