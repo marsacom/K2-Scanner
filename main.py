@@ -13,12 +13,20 @@ import nmap as n
 import subprocess
 
 def main():
-    pass
+    scan(args.target)
 
 def get_args():
-    parser = argparse.ArgumentParser(description="An accurate, fast, in depth network scanning tool")
+    parser = argparse.ArgumentParser(prog='K2-Scanner', description='An accurate, fast, in depth network scanning tool')
 
-    parser.add_argument()
+    parser.add_argument('-t', '--target', dest='target', required=True, help='The target IP Address/Addresses...')
 
-def get_ips():
-    pass
+    args = parser.parse_args()
+
+    return args
+
+def scan(ip):
+    ps = n.PortScanner()
+    ps.scan(hosts=ip)
+
+args = get_args()
+main()
